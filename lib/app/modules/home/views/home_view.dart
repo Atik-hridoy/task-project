@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../core/constants/app_assets.dart';
+import '../../../routes/app_routes.dart';
 import '../controllers/home_controller.dart';
 import 'widgets/stat_card.dart';
 import 'widgets/weather_card.dart';
@@ -43,27 +44,30 @@ class HomeView extends GetView<HomeController> {
         padding: EdgeInsets.all(16.w),
         child: Column(
           children: [
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 14.h),
-              decoration: BoxDecoration(
-                color: const Color(0xFF00BCD4),
-                borderRadius: BorderRadius.circular(8.r),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    '2nd Page Navigate',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
+            GestureDetector(
+              onTap: () => Get.toNamed(AppRoutes.secondPage),
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 14.h),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF00BCD4),
+                  borderRadius: BorderRadius.circular(8.r),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      '2nd Page Navigate',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 8.w),
-                  const Icon(Icons.arrow_forward, color: Colors.white, size: 20),
-                ],
+                    SizedBox(width: 8.w),
+                    const Icon(Icons.arrow_forward, color: Colors.white, size: 20),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 16.h),
