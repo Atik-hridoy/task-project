@@ -40,9 +40,10 @@ class HomeView extends GetView<HomeController> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.w),
-        child: Column(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(16.w),
+          child: Column(
           children: [
             GestureDetector(
               onTap: () => Get.toNamed(AppRoutes.secondPage),
@@ -230,6 +231,7 @@ class HomeView extends GetView<HomeController> {
             SizedBox(height: 16.h),
           ],
         ),
+      ),
       ),
     );
   }

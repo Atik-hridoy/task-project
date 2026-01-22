@@ -54,8 +54,9 @@ class SecondPageView extends GetView<SecondPageController> {
         ],
       ),
       body: SafeArea(
+        bottom: true,
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(16.w),
+          padding: EdgeInsets.fromLTRB(16.w, 16.h, 16.w, 24.h),
           child: Column(
             children: [
               NavigateButtonWidget(
